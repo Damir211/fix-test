@@ -1,22 +1,63 @@
 // Common styles of the project
-
-html, body {
+html,
+body {
+    margin: 0;
+    padding: 0;
     height: 100%;
 }
 
-.page {
-    
+body {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    position: relative;
+    font-family: 'Muller', sans-serif;
+    -webkit-overflow-scrolling: touch;
+    & > * {
+        flex-shrink: 0;
+    }
 }
 
-.page__wrapper {
-    min-height: 100%;
-    margin-bottom: -50px;
+.no-scroll {
+    overflow: hidden;
 }
 
-* html .page__wrapper {
-    height: 100%;
+* {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
 }
 
-.page__buffer {
-    height: 50px;
+//Убрать стили айфона у инпутов
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+    // background: transparent;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+//Убирает крестик у инпутов ie
+input::-ms-clear {
+    display: none;
+}
+
+//Убирает глазик на type="password" в ie
+input::-ms-reveal {
+    display: none;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
 }

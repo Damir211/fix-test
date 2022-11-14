@@ -1,18 +1,22 @@
-/* Your custom fonts here */
-
-/* Example
-
 @font-face {
-    font-family: 'CustomFont';
-    src: url('../fonts/Custom-Font.eot');
-    src: url('../fonts/Custom-Font.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Custom-Font.woff') format('woff'),
-         url('../fonts/Custom-Font.svg#custom_font') format('svg');
-    font-weight: 400;       // For normal width. It could has another value   
-    font-style: normal;     // Also could has another value
-    }
-
-
-// Var for using custom font
-$CustomFont: 'CustomFont', Helvetica, Arial, sans-serif;
-*/
+    font-family: 'Muller';
+    src: url('../fonts/MullerRegular.eot');
+    src: local('Muller Regular'), local('MullerRegular'),
+        url('../fonts/MullerRegular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/MullerRegular.woff2') format('woff2'),
+        url('../fonts/MullerRegular.woff') format('woff'),
+        url('../fonts/MullerRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Muller';
+    src: url('../fonts/MullerMedium.eot');
+    src: local('Muller Medium'), local('MullerMedium'),
+        url('../fonts/MullerMedium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/MullerMedium.woff2') format('woff2'),
+        url('../fonts/MullerMedium.woff') format('woff'),
+        url('../fonts/MullerMedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
