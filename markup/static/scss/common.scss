@@ -61,3 +61,19 @@ a {
     text-decoration: none;
     cursor: pointer;
 }
+.link{
+    display: flex;
+    align-items: center;
+    font-size: 21px;
+    line-height: 25px;
+    color: $text-color;
+    transition: 0.3s;
+    &__icon{
+        flex-shrink: 0;
+        margin-right: 9px;
+    }
+
+    &:hover{
+        color: $main-color;
+    }
+}
