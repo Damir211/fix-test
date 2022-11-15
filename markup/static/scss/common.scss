@@ -76,8 +76,15 @@ a {
     &__icon{
         flex-shrink: 0;
         margin-right: 9px;
+        img{
+            display: block;
+        }
     }
-
+    &-border{
+        span{
+            border-bottom: 1px solid $main-color;
+        }
+    }
     &:hover{
         color: $main-color;
     }
@@ -202,4 +209,25 @@ a {
     letter-spacing: 0.62px;
     text-transform: uppercase;
     color: #33B5A3;
+}
+.address{
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p{
+        font-size: 21px;
+        line-height: 30px;
+        text-align: center;
+        letter-spacing: -0.1px;
+        color: #000000;
+        margin: 0;
+    }
+    span{
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        letter-spacing: -0.00761905px;
+        color: #666666;
+    }
 }
