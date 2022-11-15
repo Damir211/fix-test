@@ -140,3 +140,24 @@ a {
         background: $button-color-hover;
     }
 }
+
+.wrapper{
+    width: 980px;
+    margin: 0 auto;
+}
+.title{
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 50px;
+    letter-spacing: -0.1px;
+    color: #000000;
+    margin-bottom: 8px;
+}
+.text{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.62px;
+    text-transform: uppercase;
+    color: #33B5A3;
+}
