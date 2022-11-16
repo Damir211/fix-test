@@ -26,8 +26,11 @@ videoButtons.forEach(videoButton => {
 function videoShow(source){
     const container = document.querySelector('.videopopup__container');
     const videopopup = document.querySelector('.videopopup');
+    const resultSource = source.includes('?') 
+                            ? (source.includes('autoplay') ? source : source + '&autoplay=1') 
+                            : source + '?autoplay=1'
     const iframe = `<iframe width="560" height="315" 
-    src="${source}" 
+    src="${resultSource}" 
     title="YouTube video player" frameborder="0" 
     allow="accelerometer; autoplay; clipboard-write; 
     encrypted-media; gyroscope; picture-in-picture" 
