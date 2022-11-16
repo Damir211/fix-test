@@ -8,6 +8,14 @@ inputsContainers.forEach(inputContainer => {
     });
 });
 
+const validateEmail = (email) => {
+    return String(email)
+        .toLowerCase()
+        .match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+};
+
 function ValidateForm( form, callback ){
     this.validateInputs = form.querySelectorAll('[data-validate]');
     this.validateHandlersIsInited = false;
@@ -51,10 +59,33 @@ function ValidateForm( form, callback ){
     });
 }
 
-const validateEmail = (email) => {
-    return String(email)
-        .toLowerCase()
-        .match(
-            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        );
-};
+// Маска телеофна
+const telInputs = document.querySelectorAll('.tel-mask');
+telInputs.forEach(input => {
+    const instanceInput = new MaskInput(input);
+});
+
+function MaskInput(input){
+    input.addEventListener('input', (event)=>{
+        const selectionCoords = input.selectionStart;
+        let isEdit = false;
+        if(selectionCoords !== input.value.length) isEdit = true;
+        const eventDelete = ['deleteContentBackward', 'deleteWordBackward', 'deleteByCut'];
+        if(event.inputType && eventDelete.includes(event.inputType)) return;
+        let digitValue = input.value.replace('+7', '').replace(/\D/g, '');
+        if(!event.inputType || event.inputType === "insertFromPaste"){
+            if(digitValue.length === 11 && digitValue[0] === '8') digitValue = digitValue.slice(1);
+        }
+        let resultValue = '(###) ###-##-##';
+        for(let i = 0; i < digitValue.length; i++){
+            resultValue = resultValue.replace('#', digitValue[i]);
+        }
+
+        if(resultValue.includes('#')){
+            resultValue = resultValue.split('#')[0];
+        }
+        input.value = '+7 ' + resultValue;
+        if(isEdit) input.setSelectionRange(selectionCoords, selectionCoords);
+    });
+}
+
