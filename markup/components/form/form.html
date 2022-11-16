@@ -1,6 +1,6 @@
 <section class="form">
     <div class="wrapper">
-        <div class="form__container">
+        <form class="form__container validate-form" id="start-service-form">
             <div class="title">
                 Узнайте о запуске сервиса первым
             </div>
@@ -11,13 +11,13 @@
                 <span>Первым 10 клиентам стальная входная дверь в подарок</span>
             </div>
             <div class="input">
-                <input type="text">
+                <input type="text" data-validate="required">
                 <div class="input__placeholder">
                     Имя и фамилия*
                 </div>
             </div>
             <div class="input">
-                <input type="text">
+                <input type="text" data-validate="email">
                 <div class="input__placeholder">
                     Е-mail адрес*
                 </div>
@@ -28,13 +28,28 @@
                     Телефон
                 </div>
             </div>
-            <button class="button">
+            <button class="button" type="submit">
                 Подписаться
             </button>
             <div class="form__politic">
                 * Обязательные для заполнения поля 
                 <a href="#">Политика конфиденциальности</a>
             </div>
-        </div>
+            <div class="form__success">
+                <img src="./static/img/content/success.svg" alt="">
+                <span>
+                    Спасибо! Мы будем держать вас в курсе обновлений
+                </span>
+            </div>
+        </form>
     </div>
 </section>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('start-service-form');
+        const formInstance = new ValidateForm(form, () => {
+            form.classList.add('success');
+            //скрипт для отправки формы
+        })
+    })
+</script>

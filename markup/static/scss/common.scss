@@ -163,6 +163,7 @@ a {
         border: 1px solid #CCCCCC;
         border-radius: 4px;
         color: #383838;
+        transition: 0.3s;
         &:focus + .input__placeholder, &.active-placeholder + .input__placeholder{
             top: -11px;
             font-size: 13px;            
