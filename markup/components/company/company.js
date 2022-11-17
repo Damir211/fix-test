@@ -11,5 +11,5 @@ anchorLinksElements.forEach(link => {
 function scrollToElement(selector) {
     const targetElement = document.querySelector(selector)
     if(!targetElement) return;
-    targetElement.scrollIntoView({block: "center", behavior: "smooth"});
+    targetElement.scrollIntoView({block: "start", behavior: "smooth"});
 }
