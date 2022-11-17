@@ -93,7 +93,8 @@ a {
     position: relative;
     z-index: 1;
     height: 100%;
-    width: 940px;
+    max-width: 940px;
+    width: 51.04vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,6 +122,9 @@ a {
         span{
             display: inline-block;
             margin-top: 19px;
+            @media screen and (max-width: 1279px) {
+                margin-top: 5px;
+            }
         }
         svg{
             display: block;
@@ -128,6 +132,16 @@ a {
         path{
             transform-origin: center;
             transition: 0.3s;                
+        }
+    }
+    &__play{
+        @media screen and (max-width: 1279px) {
+            width: 180px;
+            height: 180px;
+            svg{
+                max-width: 100%;
+                max-height: 100%;
+            }
         }
     }
     &:hover{
@@ -195,6 +209,9 @@ a {
 .wrapper{
     width: 980px;
     margin: 0 auto;
+    @media screen and (max-width: 1023px) {
+        width: calc(100% - 30px);
+    }
 }
 .title{
     font-size: 40px;
@@ -203,6 +220,14 @@ a {
     letter-spacing: -0.1px;
     color: #000000;
     margin-bottom: 8px;
+    @media screen and (max-width: 1023px) {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    @media screen and (max-width: 579px) {
+        font-size: 24px;
+        line-height: 30px;
+    }
 }
 .text{
     font-size: 16px;
@@ -211,6 +236,10 @@ a {
     letter-spacing: 0.62px;
     text-transform: uppercase;
     color: #33B5A3;
+    @media screen and (max-width: 579px) {
+        font-size: 14px;
+        line-height: 20px;
+    }
 }
 .address{
     font-style: normal;

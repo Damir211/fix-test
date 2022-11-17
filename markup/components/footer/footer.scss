@@ -1,11 +1,17 @@
 .footer{
     padding: 0 80px;
     background: #F2F2F2;
+    @media screen and (max-width: 1279px) {
+        padding: 0 15px;
+    }
     &__container{
         padding: 70px 0;
         display: flex;
         flex-direction: column;
         align-items: center;
+        @media screen and (max-width: 479px) {
+            padding: 40px 0;
+        }
     }
     &__title{
         font-size: 21px;
@@ -27,12 +33,25 @@
     &__info{
         display: flex;
         align-items: center;
+        @media screen and (max-width: 767px) {
+            flex-direction: column;
+        }
         & > *:not(:last-child){
             margin-right: 90px;
+            @media screen and (max-width: 1023px) {
+                margin-right: 10px;
+            }
+            @media screen and (max-width: 767px) {
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
         }
     }
     .link{
         width: 253px;
+        @media screen and (max-width: 767px) {
+            width: auto;
+        }
     }
     .socials{
         margin-bottom: 30px;
