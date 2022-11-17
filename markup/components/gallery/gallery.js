@@ -10,6 +10,10 @@ function Slider(element){
     this.maxRightShiftPosition = -((this.sliderWidth * 0.2) + (this.sliderElementsCount - 1) * this.sliderWidth);
     this.activeSlider = 0;
     this.sliderPosition = 0;
+
+    this.sliderElements.forEach(slider => {
+        slider.style.width = this.sliderWidth + 'px';
+    })
     
     this.setActiveSlider = () => {
         this.sliderElements.forEach(element => {
